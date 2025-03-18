@@ -19,12 +19,12 @@ src="https://i.imgur.com/LyHic3i.gif?"/>
 <p align='center'>
  </p>
  
- ![logo](https://raw.githubusercontent.com/ultxl/SPIDEY-MD/main/scc.jpg)
+ ![logo](https://files.catbox.moe/qmyw8x.jpg)
                                                                                                      
 
 **How to deploy**
 
-**1. First step**
+**1. First step
 
 
 <p align="left">
