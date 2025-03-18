@@ -6,7 +6,7 @@ const { client, m, text, fetchJson } = context;
 try {
 
 
-const data = await fetchJson('https://api.dreaded.site/api/fact');
+const data = await fetchJson('https://api.dreaded.site/api/catfact');
 
 const fact = data.fact;
 
