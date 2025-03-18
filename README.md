@@ -12,7 +12,7 @@ src="https://i.imgur.com/LyHic3i.gif?"/>
 
    </p>
 <p align="center">
-<a href="https://github.com/hamixl"><img title="Author" src="https://img.shields.io/badge/Spidey-tech?style=for-the-badge&logo=Github"></a> <a href="https://youtube.com/@ultxl"><img title="Author" src="https://img.shields.io/badge/YOUTUBE SUBSCRIBE-red?style=for-the-badge&logo=youtube"></a> <a href="https://wa.me/254785429940"><img title="Author" src="https://img.shields.io/badge/Contact Me-black?style=for-the-badge&logo=whatsapp"></a>
+<a href="https://github.com/hamixl"><img title="Author" src="https://img.shields.io/badge/spidey-tech?style=for-the-badge&logo=Github"></a> <a href="https://youtube.com/@ultxl"><img title="Author" src="https://img.shields.io/badge/YOUTUBE SUBSCRIBE-red?style=for-the-badge&logo=youtube"></a> <a href="https://wa.me/254785429940"><img title="Author" src="https://img.shields.io/badge/Contact Me-black?style=for-the-badge&logo=whatsapp"></a>
 <p/> 
 
  <p
