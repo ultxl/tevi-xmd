@@ -14,8 +14,8 @@
     "baileys-md",
     "md-bot"
   ],
-  "website": "https://github.com/Fortunatusmokaya/dreaded-v2#readme",
-  "repository": "https://github.com/Fortunatusmokaya/dreaded-v2.git",
+  "website": "https://github.com/ultxl/spidey-md#readme",
+  "repository": "https://github.com/ultxl/spidey-md.git",
   "logo": "https://files.catbox.moe/qmyw8x.jpg",
   "success_url": "/",
   "env": {
@@ -110,4 +110,4 @@
       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
     }
   ]
-}
+  }
