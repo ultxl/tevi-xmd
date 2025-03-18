@@ -13,14 +13,14 @@ try {
             } catch {
                 img = "https://telegra.ph/file/9521e9ee2fdbd0d6f4f1c.jpg"
             }
-                        result = await canvacord.Canvacord.rip(img);
+                        result = await canvacord.Canvacord.shit(img);
         } else if (Tag) {
             try {
                 ppuser = await client.profilePictureUrl(Tag[0] || m.sender, 'image')
             } catch {
                 ppuser = 'https://telegra.ph/file/9521e9ee2fdbd0d6f4f1c.jpg'
             }
-                        result = await canvacord.Canvacord.rip(ppuser);
+                        result = await canvacord.Canvacord.shit(ppuser);
         } 
 
 

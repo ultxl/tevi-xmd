@@ -1,3 +1,5 @@
+const { Sticker, createSticker, StickerTypes } = require('wa-sticker-formatter')
+
 const canvacord = require("canvacord");
 
 module.exports = async (context) => {
@@ -13,18 +15,29 @@ try {
             } catch {
                 img = "https://telegra.ph/file/9521e9ee2fdbd0d6f4f1c.jpg"
             }
-                        result = await canvacord.Canvacord.rip(img);
+                        result = await canvacord.Canvacord.trigger(img);
         } else if (Tag) {
             try {
                 ppuser = await client.profilePictureUrl(Tag[0] || m.sender, 'image')
             } catch {
                 ppuser = 'https://telegra.ph/file/9521e9ee2fdbd0d6f4f1c.jpg'
             }
-                        result = await canvacord.Canvacord.rip(ppuser);
+                        result = await canvacord.Canvacord.trigger(ppuser);
         } 
 
+        let sticker = new Sticker(result, {
+            pack: `bumble`,
+            author:"" ,
+            categories: ['🤩', '🎉'],
+            id: '12345',
+            quality: 75,
+            background: 'transparent' // The sticker background color (only for full stickers)
+        })
+        const stikk = await sticker.toBuffer()
+       await client.sendMessage(m.chat, {sticker: stikk}, {quoted: m})
 
-        await client.sendMessage(m.chat, { image: result, caption: cap }, { quoted: m });
+
+        
 
 } catch (e) {
 
