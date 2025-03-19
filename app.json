@@ -1,10 +1,10 @@
 {
   "name": "𝐒𝐏𝐈𝐃𝐄𝐘 𝐌𝐃",
-  "description": "This is a simple whatsapp bot built with nodejs and baileys with MD support.",
+  "description": "This is a simple whatsapp bot built with nodejs to make your WhatsApp enjoyable ",
   "keywords": [
     "bot",
     "whatsapp",
-    "dreaded",
+    "keith",
     "whatsapp-stickers",
     "anime",
     "whatsapp-bot",
@@ -14,38 +14,41 @@
     "baileys-md",
     "md-bot"
   ],
-  "website": "https://github.com/ultxl/spidey-md#readme",
-  "repository": "https://github.com/ultxl/spidey-md.git",
+  "website": "https://github.com/ultxl/SPIDEY-MD#readme",
+  "repository": "https://github.com/ultxl/SPIDEY-MD.git",
   "logo": "https://files.catbox.moe/qmyw8x.jpg",
   "success_url": "/",
   "env": {
     "PREFIX": {
-      "description": "choose your prefix for bee. To prevent errors and confusion you must set a prefix",
+      "description": "choose your prefix for keith. To prevent errors and confusion you must set a prefix",
       "value": ".",
+      "required": false
+    },
+    "OWNER_NUMBER": {
+      "description": "Put any phone numbers you want to be bot owner without + or spaces \",\" Ex: 25478599xx",
+      "required": false
+    },
+    "OWNER_NAME": {
+      "description": "add your owner name for the bot",
+         "value": "",
       "required": true
     },
-    "DEV": {
-      "description": "Put any phone numbers you want to be bot owner without + or spaces \",\" Ex: 254785429940 ",
-      "required": false
-    },
-    "CODE": {
-      "description": "Enter your country code without +. Example: 254 for Kenya. This will allow bot to detect and remove foreigners if commanded",
+    "HEROKU_API_KEY": {
+      "description": "add your heroku api key here",
       "required": true
     },
-    "STICKER_AUTHOR": {
-      "description": "Put your sticker author data",
-      "required": false
-    },
-    "STICKER_PACKNAME": {
-      "description": "Put your sticker packname data",
-      "required": false
+    "HEROKU_APP_NAME": {
+      "description": "should match to your app name you placed above copy paste it here for the heroku vars setting",
+      "required": true
     },
     "BOTNAME": {
       "description": "Enter name for your bot.",
-      "required": false
+      "value": "",
+      "required": true
     },
-    "GC_PRESENCE": {
-      "description": "Type true if you want bot to show fake recording/typing in group chats.",
+    "EMOJI": {
+      "description": "Add your favorite emoji ",
+         "value": "💚",
       "required": false
     },
     "SESSION": {
@@ -54,16 +57,7 @@
     },
     "AUTOVIEW_STATUS": {
       "description": "Type true if you want bot to automatically read all status update",
-      "required": true
-    },
-
- "AUTOLIKE_STATUS": {
-      "description": "Type true if you want bot to automatically like status updates, this will only work if AUTOVIEW_STATUS is true.",
-      "required": false
-    },
-
- "ANTIDELETE": {
-      "description": "Type true if you want bot to automatically forward deleted messages in groups. The deleted messages will be forwarded to the <message yourself chat>. We are yet to implement antidelete for private chats.",
+         "value": "true",
       "required": false
     },
 
@@ -74,19 +68,39 @@
     },
 "AUTOBIO": {
       "description": "Type true if you want bot to autoupdate it's bio constantly",
+         "value": "true",
+      "required": false
+        },
+"ANTICALL_MSG": {
+      "description": "add your anticall message .this works when anticall is enabled",
+         "value": "call declined",
+      "required": false
+        },
+"ANTICALL": {
+      "description": "Type true if you want bot to reject unnecessary calls",
+         "value": "true",
       "required": false
     },
 
-"ANTITAG": {
-      "description": "Type true if you want bot to automatically remove members who tagall or use hidetag.",
+"GROUP_CONTROL": {
+      "description": "Type true if you want the bot to kick those who send link or bad words in group .",
+         "value": "true",
       "required": false
     },
-"ANTIVIEWONCE": {
-      "description": "Type true if you want bot to automatically read viewonce media",
+"URL": {
+      "description": "Replace with your image url",
+      "value": "https://files.catbox.moe/qmyw8x.jpg",
+      "required": true
+    },
+
+ "AUTOLIKE_STATUS": {
+      "description": "Type true if you want bot to automatically like status updates, this will only work if AUTOVIEW_STATUS is true.",
+         "value": "true",
       "required": false
     },
     "AUTOREAD": {
       "description": "Put here true if you want bot to automatically bluetick messages in private.",
+         "value": "false",
       "required": false
     },
     "WA_PRESENCE": {
@@ -96,6 +110,7 @@
     },
     "MODE": {
       "description": "Type private if you don't want other people to use the bot or public if you want everyone to access.",
+      "value": "public",
       "required": false
     }
   },
@@ -110,4 +125,4 @@
       "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
     }
   ]
-  }
+}

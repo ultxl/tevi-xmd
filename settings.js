@@ -1,50 +1,86 @@
-/* Bot settings 
+// Bot settings
 
-You don't have to set this if you deploy using heroku because you can simply set them in environment variables, also don't forget to sleep */
-
+// You don't have to set this if you deploy using Heroku because you can simply set them in environment variables. Also, don't forget to sleep.
 
 const session = process.env.SESSION || '';
 
-const prefix = process.env.PREFIX || '.';
+const prefix = process.env.PREFIX || '';
 const mycode = process.env.CODE || "254";
-const author = process.env.STICKER_AUTHOR || 'spideytech';
-const packname = process.env.PACKNAME || '𝐒𝐏𝐈𝐃𝐄𝐘 𝐌𝐃';
-const dev = process.env.DEV || '254785429940';
-const DevDreaded = dev.split(",");
-const botname = process.env.BOTNAME || '𝐒𝐏𝐈𝐃𝐄𝐘 𝐌𝐃';
+const author = process.env.OWNER_NAME || 'Spidey';
+const packname = process.env.PACKNAME || 'Spidey';
+const dev = process.env.OWNER_NUMBER || '254785429940';
+const DevKeith = dev.split(",");
+const botname = process.env.BOTNAME || 'SPIDEY-MD';
 const mode = process.env.MODE || 'public';
 const gcpresence = process.env.GC_PRESENCE || 'false';
-const antionce = process.env.ANTIVIEWONCE || 'false';
+const antionce = process.env.ANTIVIEWONCE || 'true';
 const sessionName = "session";
-const cookies = JSON.parse(process.env.COOKIE || '[{"domain":".youtube.com","expirationDate":1764463277.409877,"hostOnly":false,"httpOnly":false,"name":"__Secure-1PAPISID","path":"/","sameSite":"unspecified","secure":true,"session":false,"storeId":"0","value":"UoBcKfo0_FSAxQ5D/A5ZClpB2xVLQJQGUx","id":1},{"domain":".youtube.com","expirationDate":1764463277.412158,"hostOnly":false,"httpOnly":true,"name":"__Secure-1PSID","path":"/","sameSite":"unspecified","secure":true,"session":false,"storeId":"0","value":"g.a000pghxevPjwTr5Un_D-PS1UxiaEdymANhc_5NWNQgaApthzLU0MOFGGamQ5yqi2vrAqKldbgACgYKASoSARUSFQHGX2MiB0PtUQYJy2_oQLkmMPXgfRoVAUF8yKpuqWya_M2xRHe_6e9o_6TK0076","id":2},{"domain":".youtube.com","expirationDate":1762941611.655441,"hostOnly":false,"httpOnly":true,"name":"__Secure-1PSIDCC","path":"/","sameSite":"unspecified","secure":true,"session":false,"storeId":"0","value":"AKEyXzWtrmvqerXnEweUSkGiFKAn57TBnvoAEBDi6B33Sg4gpMOANgVFwDBU_JtKQXLpisy_","id":3}]');
 const presence = process.env.WA_PRESENCE || 'online';
-
+const herokuapikey = process.env.HEROKU_API_KEY || '';
+const herokuAppname = process.env.HEROKU_APP_NAME || '';
+const url = process.env.URL || 'https://files.catbox.moe/qmyw8x.jpg';
+const gurl = process.env.GURL || 'https://whatsapp.com/channel/0029VakpYHJ4dTnCaDsMBT1Z';
+const reactemoji = process.env.EMOJI || '💚';
 const antitag = process.env.ANTITAG || 'true';
+const groupControl = process.env.GROUP_CONTROL || 'true';
+const anticall = process.env.ANTICALL || 'true';
 const antidelete = process.env.ANTIDELETE || 'true';
 const autoview = process.env.AUTOVIEW_STATUS || 'true';
 const autolike = process.env.AUTOLIKE_STATUS || 'true';
+const timezone = process.env.TIMEZONE || 'Africa/Nairobi';
 const autoread = process.env.AUTOREAD || 'true';
+const anticallmsg = process.env.ANTICALL_MSG || 'Spidey declined your call';
 const autobio = process.env.AUTOBIO || 'false';
+
+const { Sequelize } = require('sequelize'); // Ensure Sequelize is imported
+
+const DATABASE_URL = process.env.DATABASE_URL || './database.db'; // Define DATABASE_URL properly
+
+const database =
+  DATABASE_URL === './database.db'
+    ? new Sequelize({
+        dialect: 'sqlite',
+        storage: DATABASE_URL,
+        logging: false,
+      })
+    : new Sequelize(DATABASE_URL, {
+        dialect: 'postgres',
+        ssl: true,
+        protocol: 'postgres',
+        dialectOptions: {
+          ssl: { require: true, rejectUnauthorized: false },
+        },
+        logging: false,
+      });
 
 module.exports = {
   sessionName,
   presence,
   autoview,
   autoread,
+  database,
   botname,
-  cookies,
+  reactemoji,
   autobio,
+  antilink: groupControl, // Use groupControl for antilink
+  antibad: groupControl, // Use groupControl for antibad
   mode,
-autolike,
   prefix,
+  anticall,
+  autolike,
+  anticallmsg,
   mycode,
   author,
+  herokuAppname,
+  herokuapikey,
+  url,
+  gurl,
   packname,
   dev,
-  DevDreaded,
+  DevKeith,
   gcpresence,
   antionce,
-session,
-antitag,
-antidelete
+  session,
+  antitag,
+  antidelete,
 };
