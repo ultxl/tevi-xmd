@@ -1,6 +1,6 @@
 {
   "bot-name": "𝐒𝐏𝐈𝐃𝐄𝐘 𝐌𝐃",
-  "description": "Have a better experience in WhatsApp with the KEITH-MD bot.",
+  "description": "Have a better experience in WhatsApp with the SPIDEY-MD bot.",
   "logo": "https://files.catbox.moe/qmyw8x.jpg",
   "keywords": ["bot"],
   "documentation-link": "https://spidey-md-pair-39fb390baadc.herokuapp.com/",
@@ -8,7 +8,7 @@
 
   "env": {
     "PREFIX": {
-      "description": "Choose your prefix for KEITH. To prevent errors and confusion, you must set a prefix.",
+      "description": "Choose your prefix for SPIDEY. To prevent errors and confusion, you must set a prefix.",
       "value": ".",
       "required": false
     },
@@ -67,7 +67,7 @@
     },
     "URL": {
       "description": "Replace with your image URL.",
-      "value": "https://files.catbox.moe/mikdi0.jpg",
+      "value": "https://files.catbox.moe/qmyw8x.jpg",
       "required": true
     },
     "AUTOLIKE_STATUS": {
