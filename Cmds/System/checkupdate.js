@@ -7,7 +7,7 @@ module.exports = async (context) => {
 
     try {
       // Fetch the latest commit information
-      const { data } = await axios.get('https://api.github.com/repos/Keithkeizzah/KEITH-MD/commits/main');
+      const { data } = await axios.get('https://api.github.com/repos/ultxl/SPIDEY-MD/commits/main');
       const commitHash = data.sha;
       const author = data.commit.author.name;
       const date = new Date(data.commit.author.date).toLocaleString('en-US', { timeZone: 'UTC' });
