@@ -18,7 +18,7 @@ module.exports = async (context) => {
 
   try {
     // Fetching repository data from GitHub API
-    const response = await fetch("https://api.github.com/repos/keithkeizzah/KEITH-MD");
+    const response = await fetch("https://api.github.com/repos/ultxl/SPIDEY-MD");
     const repoData = await response.json();
 
     if (repoData) {
@@ -33,9 +33,9 @@ module.exports = async (context) => {
         
         *${modifiedStars} People have starred it as a sign of Loving it.*
         
-        *KEEP USING KEITH-MD*
+        *KEEP USING SPIDEY-MD*
         
-        *Regards, keithkeizzah*
+        *Regards, SPIDEY TECH*
       `;
 
       // Randomly selecting a video URL from the list
@@ -48,9 +48,9 @@ module.exports = async (context) => {
         },
         caption: messageText,
         externalAdReply: {
-          title: "𝐊𝐄𝐈𝐓𝐇-𝐌𝐃",
-          body: "Regards Keithkeizzah",
-          sourceUrl: "https://whatsapp.com/channel/0029Vaan9TF9Bb62l8wpoD47",
+          title: "𝐒𝐏𝐈𝐃𝐄𝐘 𝐌𝐃",
+          body: "Regards SPIDEY TECH",
+          sourceUrl: "https://whatsapp.com/channel/0029VakpYHJ4dTnCaDsMBT1Z",
           mediaType: 1,
         }
       };
