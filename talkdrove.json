@@ -3,8 +3,8 @@
   "description": "Have a better experience in WhatsApp with the SPIDEY-MD bot.",
   "logo": "https://files.catbox.moe/qmyw8x.jpg",
   "keywords": ["bot"],
-  "documentation-link": "https://spidey-md-pair-39fb390baadc.herokuapp.com/",
-  "owner-verification": "solhtevi@gmail.com",
+  "documentation-link": "https://spidey-md.onrender.com/",
+  "owner-verification": "ultspidey02@gmail.com",
 
   "env": {
     "PREFIX": {
