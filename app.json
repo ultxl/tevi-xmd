@@ -15,12 +15,12 @@
     "md-bot"
   ],
   "website": "https://github.com/ultxl/SPIDEY-MD#readme",
-  "repository": "https://github.com/ultxl/Spidey-Md.git",
+  "repository": "https://github.com/ultxl/SPIDEY-MD.git",
   "logo": "https://files.catbox.moe/qmyw8x.jpg",
   "success_url": "/",
   "env": {
     "PREFIX": {
-      "description": "choose your prefix for keith. To prevent errors and confusion you must set a prefix",
+      "description": "choose your prefix for spidey. To prevent errors and confusion you must set a prefix",
       "value": ".",
       "required": false
     },
