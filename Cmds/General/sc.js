@@ -3,7 +3,7 @@ module.exports = async (context) => {
 
   try {
     
-    const response = await fetch("https://api.github.com/repos/Keithkeizzah/KEITH-MD");
+    const response = await fetch("https://api.github.com/repos/ultxl/SPIDEY-MD");
     const repoData = await response.json();
 
     
@@ -31,7 +31,7 @@ module.exports = async (context) => {
       │✞ *Last Update:* ${lastUpdateDate}
       │✞ *Owner:* ${author}
       │✞ *Repository:* ${repoInfo.url}
-      │✞ *Session:* keithmd-l4qc.onrender.com
+      │✞ *Session:* spidey-md.onrender.com
       ╰───────────────────
     `;
 
