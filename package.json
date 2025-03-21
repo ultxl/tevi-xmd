@@ -113,10 +113,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ultxl/Spidey-Md"
+    "url": "git+https://github.com/ultxl/SPIDEY-MD"
   },
   "bugs": {
-    "url": "https://github.com/ultxl/Spidey-Md/issues"
+    "url": "https://github.com/ultxl/SPIDEY-MD/issues"
   },
-  "homepage": "https://github.com/ultxl/Spidey-Md#readme"
+  "homepage": "https://github.com/ultxl/SPIDEY-MD#readme"
 }
