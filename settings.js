@@ -6,11 +6,11 @@ const session = process.env.SESSION || '';
 
 const prefix = process.env.PREFIX || '';
 const mycode = process.env.CODE || "254";
-const author = process.env.OWNER_NAME || 'Spidey';
-const packname = process.env.PACKNAME || 'Spidey';
+const author = process.env.OWNER_NAME || '𝐒𝐏𝐈𝐃𝐄𝐘';
+const packname = process.env.PACKNAME || '𝐒𝐏𝐈𝐃𝐄𝐘';
 const dev = process.env.OWNER_NUMBER || '254785429940';
 const DevKeith = dev.split(",");
-const botname = process.env.BOTNAME || 'SPIDEY-MD';
+const botname = process.env.BOTNAME || '𝐒𝐏𝐈𝐃𝐄𝐘 𝐌𝐃';
 const mode = process.env.MODE || 'public';
 const gcpresence = process.env.GC_PRESENCE || 'false';
 const antionce = process.env.ANTIVIEWONCE || 'true';
@@ -29,7 +29,7 @@ const autoview = process.env.AUTOVIEW_STATUS || 'true';
 const autolike = process.env.AUTOLIKE_STATUS || 'true';
 const timezone = process.env.TIMEZONE || 'Africa/Nairobi';
 const autoread = process.env.AUTOREAD || 'true';
-const anticallmsg = process.env.ANTICALL_MSG || 'Spidey declined your call';
+const anticallmsg = process.env.ANTICALL_MSG || 'declined';
 const autobio = process.env.AUTOBIO || 'false';
 
 const { Sequelize } = require('sequelize'); // Ensure Sequelize is imported
