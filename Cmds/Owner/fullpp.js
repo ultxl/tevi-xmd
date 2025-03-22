@@ -3,17 +3,17 @@ const { S_WHATSAPP_NET } = require('@whiskeysockets/baileys');
 
 module.exports = async (context) => {
     await ownerMiddleware(context, async () => {
-        const { client, m, text, Owner, generateProfilePicture, botNumber, mime, msgDreaded } = context;
+        const { client, m, text, isOwner, generateProfilePicture, botNumber, mime, msgKeith } = context;
 
 try {
 const fs = require("fs");
 
-if(!msgDreaded) { m.reply('Quote an image...') ; return } ;
+if(!msgKeith) { m.reply('Quote an image...') ; return } ;
 
 
 let media;
-if (msgDreaded.imageMessage) {
-     media = msgDreaded.imageMessage
+if (msgKeith.imageMessage) {
+     media = msgKeith.imageMessage
 
   } else {
     m.reply('This is not an image...'); return
