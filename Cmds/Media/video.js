@@ -1,97 +1,69 @@
-const axios = require("axios");
+const yts = require("yt-search");
+const fetch = require("node-fetch"); // Ensure 'node-fetch' is imported for API calls
 
 module.exports = async (context) => {
-    const { client, m, text, fetchJson } = context;
-    const yts = require("yt-search");
+  const { client, m, text, botname, sendReply, sendMediaMessage } = context;
 
-    try {
-        if (!text) return m.reply("What video do you want to download?");
-
-        const { videos } = await yts(text);
-        if (!videos || videos.length === 0) {
-            return m.reply("No videos found!");
-        }
-
-        const urlYt = videos[0].url;
-
-        try {
-
-            const primaryData = await fetchJson(`https://api.dreaded.site/api/ytdl/video?url=${urlYt}`);
-            if (!primaryData.success || !primaryData.result || !primaryData.result.download) {
-                throw new Error("Invalid response from primary API");
-            }
-
-            const {
-                metadata: { title: name },
-                download: { url: videoUrl, filename },
-            } = primaryData.result;
-
-            await m.reply(`_Downloading ${name}_. . .`);
-            await client.sendMessage(
-                m.chat,
-                {
-                    video: { url: videoUrl },
-                    mimetype: "video/mp4",
-                    caption: name,
-                    fileName: filename || `${name}.mp4`,
-                },
-                { quoted: m }
-            );
-
-await client.sendMessage(
-                m.chat,
-                {
-                    document: { url: videoUrl },
-                    mimetype: "video/mp4",
-                    caption: name,
-                    fileName: filename || `${name}.mp4`,
-                },
-                { quoted: m }
-            );
-
-
-        } catch (primaryError) {
-            console.error("Primary API failed:", primaryError.message);
-
-
-            try {
-                const fallbackData = await fetchJson(`https://api.dreaded.site/api/ytdl2/video?url=${urlYt}`);
-                if (!fallbackData.success || !fallbackData.downloadUrl || !fallbackData.title) {
-                    throw new Error("Invalid response from fallback API");
-                }
-
-                const { title: name, downloadUrl: videoUrl } = fallbackData;
-
-                await m.reply(`_Downloading ${name}_`);
-                await client.sendMessage(
-                    m.chat,
-                    {
-                        video: { url: videoUrl },
-                        mimetype: "video/mp4",
-                        caption: name,
-                        fileName: `${name}.mp4`,
-                    },
-                    { quoted: m }
-                );
-
-await client.sendMessage(
-                    m.chat,
-                    {
-                        document: { url: videoUrl },
-                        mimetype: "video/mp4",
-                        caption: name,
-                        fileName: `${name}.mp4`,
-                    },
-                    { quoted: m }
-                );
-
-
-            } catch (fallbackError) {
-                console.error("Fallback API failed:", fallbackError.message);
-                m.reply("Download failed: Unable to retrieve video from both APIs.");
-            }
-        }
-    } catch (error) {
-        m.reply("Download failed\n" + error.message);
+  try {
+    // Check if a query is provided
+    if (!text) {
+      return sendReply(client, m, "Please specify the video you want to download.");
     }
+
+    // Perform a YouTube search with the query
+    let search = await yts(text);
+    if (!search.all.length) {
+      return sendReply(client, m, "No results found for your query.");
+    }
+    let link = search.all[0].url; // Get the first result's URL
+
+    // Construct the API URL for video download
+    const apiUrl = `https://keith-api.vercel.app/download/dlmp4?url=${link}`;
+
+    // Fetch video details from the API
+    let response = await fetch(apiUrl);
+    let data = await response.json();
+
+    // Check the API response status
+    if (data.status && data.result) {
+      const videoData = {
+        title: data.result.title,
+        downloadUrl: data.result.downloadUrl,
+        thumbnail: search.all[0].thumbnail,
+        format: data.result.format,
+        quality: data.result.quality,
+      };
+
+      // Send video details and thumbnail to the user
+      await sendMediaMessage(client, m, {
+        image: { url: videoData.thumbnail },
+        caption: `
+╭═════════════════⊷
+║ *Title*: ${videoData.title}
+║ *Format*: ${videoData.format}
+║ *Quality*: ${videoData.quality}
+╰═════════════════⊷
+*Powered by ${botname}*`,
+      }, { quoted: m });
+
+      // Send the video to the user
+      await client.sendMessage(
+        m.chat,
+        {
+          video: { url: videoData.downloadUrl },
+          mimetype: "video/mp4",
+          caption: `Here is your video: ${videoData.title}`,
+        },
+        { quoted: m }
+      );
+
+      return;
+    } else {
+      // If API returns an error or invalid data
+      return sendReply(client, m, "Unable to fetch the video. Please try again later.");
+    }
+  } catch (error) {
+    // Handle any unexpected errors
+    return sendReply(client, m, `An error occurred: ${error.message}`);
+  }
 };

@@ -17,7 +17,8 @@ module.exports = async (context) => {
         // Build caption
         const caption = `📹 *Facebook Video* - ${botname}\n\n` +
                         `📌 *Title:* ${result.title || 'Untitled'}\n` +
-                        `*downloaded by *${botname}*`;
+                        `🔗 *Original URL:* ${result.url}\n\n` +
+                        `_Powered by Facebook Downloader_`;
 
         // Send HD video
         await sendMediaMessage(client, m, {
