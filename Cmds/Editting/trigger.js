@@ -26,7 +26,7 @@ try {
         } 
 
         let sticker = new Sticker(result, {
-            pack: `bumble`,
+            pack: `Keith-Md`,
             author:"" ,
             categories: ['🤩', '🎉'],
             id: '12345',
