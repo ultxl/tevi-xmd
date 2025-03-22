@@ -4,12 +4,9 @@ module.exports = async (context) => {
   const { client, m, text, sendReply, sendMediaMessage } = context;
 
   const apis = [
-    `https://vapis.my.id/api/gemini?q=${encodeURIComponent(text)}`,
-    `https://api.siputzx.my.id/api/ai/gemini-pro?content=${encodeURIComponent(text)}`,
-    `https://api.ryzendesu.vip/api/ai/gemini?text=${encodeURIComponent(text)}`,
-    `https://api.dreaded.site/api/gemini2?text=${encodeURIComponent(text)}`,
-    `https://api.giftedtech.my.id/api/ai/geminiai?apikey=gifted&q=${encodeURIComponent(text)}`,
-    `https://api.giftedtech.my.id/api/ai/geminiaipro?apikey=gifted&q=${encodeURIComponent(text)}`
+    `https://dark.guruapi.tech/egpt?prompt=${encodeURIComponent(text)}`,
+    `https://apis.davidcyriltech.my.id/ai/metaai?text=${encodeURIComponent(text)}`,
+    `https://api.siputzx.my.id/api/ai/metaai?query=${encodeURIComponent(text)}`
   ];
 
   try {
@@ -21,8 +18,8 @@ module.exports = async (context) => {
         const msgg = await data.json();
 
         // Checking if the API response is successful
-        if (msgg.message || msgg.data || msgg.answer || msgg.result) {
-          const final = msgg.message || msgg.data || msgg.answer || msgg.result;
+        if (msgg.message || msgg.data) {
+          const final = msgg.message || msgg.data;
           await sendReply(client, m, final);
           return;
         }
